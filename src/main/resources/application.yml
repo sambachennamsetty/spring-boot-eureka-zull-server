@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: ZULL-PROXY
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+zuul:
+  routes:
+    item:
+      path: /item-api/**
+      service-id: SERVICE-CONSUMER
+    provider:
+      path: /pro-api/**
+      service-id: SERVICE-PROVIDER
